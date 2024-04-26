@@ -5,8 +5,11 @@ pipeline {
         stage ('build'){
             steps {
                 git branch: 'main', url: 'https://github.com/Arvynrf/testing-java-maven.git'
-
-                sh "mvn"
+            }
+        }
+        stage ('create file') {
+            steps {
+                sh 'mvn'
             }
         }
     }
